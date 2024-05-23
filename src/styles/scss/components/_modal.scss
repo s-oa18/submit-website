@@ -1,0 +1,113 @@
+$breakpoints-reverse: (
+  xs: 575.98px,
+  sm: 767.98px,
+  md: 991.98px,
+  lg: 1199.98px,
+  xl: 1399.98px,
+);
+
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1400px,
+);
+
+:root {
+  --sm: 576px;
+  --md: 768px;
+  --lg: 992px;
+  --xl: 1200px;
+  --xxl: 1400px;
+}
+
+@mixin respond-below($breakpoint) {
+  @if map-has-key($breakpoints-reverse, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints-reverse, $breakpoint);
+
+    @media (max-width: ($breakpoint-value)) {
+      @content;
+    }
+  } @else {
+    @warn "Invalid breakpoint: #{$breakpoint}.";
+  }
+}
+
+modal {
+  z-index: 99999;
+}
+
+.modal-header {
+  padding: 1rem 2rem;
+}
+// .modal-body,
+.modal-footer {
+  padding: 0;
+  margin: 0;
+}
+
+.modal-content {
+  background: #293856;
+  border-radius: 16px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.modal-header {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-color: #6e7a92;
+}
+
+.modal-footer {
+  //   border-bottom-left-radius: 16px;
+  //   border-bottom-right-radius: 16px;
+  border-color: #293856;
+}
+
+.modal-under-nav .modal-dialog {
+  margin-top: 4rem;
+}
+
+// .modal-close-out {
+//   .btn-close {
+//     position: absolute;
+//     right: -50px;
+//     top: 0;
+//     background: #ffffff;
+//     opacity: 1;
+//     color: #75ab38;
+//     border-radius: 4px;
+//     width: 2.25rem;
+//     height: 2.25rem;
+//     margin: 0;
+//     padding: 0;
+
+//     @include respond-below(sm) {
+//       right: 0;
+//       top: -50px;
+//     }
+//   }
+
+//   .modal-dialog:not(.modal-dialog-centered) {
+//     margin-top: 4rem;
+//   }
+// }
+
+.modal-close-out {
+  .btn-close {
+    margin-right: 20px;
+    border: 2px solid white;
+  }
+}
+
+.close-btn {
+  background-color: #3f8047;
+  border-color: #3f8047;
+}
+
+.close-btn:hover {
+  background-color: #3f8047;
+  border-color: #3f8047;
+}
