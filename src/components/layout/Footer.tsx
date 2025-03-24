@@ -153,7 +153,8 @@ const Footer = () => {
           <div className="col-md-12">
             <div className="footer-bottom !tw-mt-0 md:!tw-mt-[35px]">
               <p className="tw-text-left md:tw-text-center">
-                Developed by <Link href="http://pegesinc.com/">Peges Inc</Link>
+                Developed by{" "}
+                <Link href="http://sellontech.com/">SellonTech Ltd</Link>
               </p>
             </div>
           </div>
